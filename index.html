@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+     body{
+       background-image: url("static/images/bacteria.jpg");
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-size: cover;
+       }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 style="color:black;">Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+      <div class ="col-md-12 jumbotron text-center" style="background-color:lightgray;">
+        <p> Starting in 2011, a group of scientists at the NC State Public Science
+            Lab launched the Belly Button Biodiversity Project to investigate the diverse
+            microbes inhabiting our navels. Hundreds of people participated by sending samples
+            of belly button microbes from sterile swab collections. What started as a small study
+            turned into a large undertaking as people from all across the country participated. Each sample
+            was grown in a dish and later genetically analyzed to determine what microbial species were present.
+            Data for the participants are shown here and can be accessed by selecting the participant's test ID number
+            from the upper left panel.  For full details see:
+            <a href="http://robdunnlab.com/projects/belly-button-biodiversity/project-history/">The Belly Button Biodiversity Project History</a>.</p>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-4" >
+        <div style="background-color:lightgray;" class="well">
+          <h4><b>Test Subject ID No.:</b></h4>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div style="background-color:lightgray;" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div  id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-4">
+        <div id="gauge"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
